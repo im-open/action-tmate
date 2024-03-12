@@ -29,7 +29,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Setup tmate session
-      uses: im-open/action-tmate@v3
+      uses: im-open/action-tmate@v1
 ```
 
 To get the connection string, just open the `Checks` tab in your Pull Request and scroll to the bottom. There you can connect either directly per SSH or via a web based terminal.
@@ -65,7 +65,7 @@ jobs:
     steps:
       # Enable tmate debugging of manually-triggered workflows if the input option was provided
       - name: Setup tmate session
-        uses: im-open/action-tmate@v3
+        uses: im-open/action-tmate@v1
         if: ${{ github.event_name == 'workflow_dispatch' && inputs.debug_enabled }}
 ```
 <!--
@@ -87,7 +87,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Setup tmate session
-      uses: im-open/action-tmate@v3
+      uses: im-open/action-tmate@v1
       with:
         detached: true
 ```
@@ -107,7 +107,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Setup tmate session
-      uses: im-open/action-tmate@v3
+      uses: im-open/action-tmate@v1
       with:
         sudo: false
 ```
@@ -125,7 +125,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Setup tmate session
-      uses: im-open/action-tmate@v3
+      uses: im-open/action-tmate@v1
       timeout-minutes: 15
 ```
 
@@ -145,7 +145,7 @@ jobs:
     - uses: actions/checkout@v3
     - name: Setup tmate session
       if: ${{ failure() }}
-      uses: im-open/action-tmate@v3
+      uses: im-open/action-tmate@v1
 ```
 <!--
 {% endraw %}
@@ -164,7 +164,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Setup tmate session
-      uses: im-open/action-tmate@v3
+      uses: im-open/action-tmate@v1
       with:
         limit-access-to-actor: true
 ```
@@ -184,7 +184,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Setup tmate session
-      uses: im-open/action-tmate@v3
+      uses: im-open/action-tmate@v1
       with:
         tmate-server-host: ssh.tmate.io
         tmate-server-port: 22
@@ -203,7 +203,7 @@ jobs:
   build:
     runs-on: [self-hosted, linux]
     steps:
-    - uses: im-open/action-tmate@v3
+    - uses: im-open/action-tmate@v1
       with:
         install-dependencies: false
 ```
